@@ -9,6 +9,7 @@ This is a prebuilt image that is based on the latest devcontainers Ubuntu 24.04 
 - Python 3.12 (via Devcontainer feature)
 - Node.js 20 (via Devcontainer feature)
 - AWS CLI v2 (via Devcontainer feature)
+- mise (polyglot runtime manager) (via Devcontainer feature)
 - Github CLI
 - MySQL Client
 - PostgreSQL Client
