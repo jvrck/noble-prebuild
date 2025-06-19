@@ -13,6 +13,7 @@ This is a prebuilt image that is based on the latest devcontainers Ubuntu 24.04 
 - MySQL Client
 - PostgreSQL Client
 - Devcontainer CLI
+- Claude Code CLI
 
 ## How to use this image
 To use this image, you can create a `.devcontainer/devcontainer.json` file in your project and add the following configuration:
