@@ -1,0 +1,38 @@
+name: Cleanup GHCR Images
+
+on:
+  schedule:
+    # Run every Sunday at 2 AM UTC
+    - cron: '0 2 * * 0'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  cleanup-base:
+    name: Cleanup noble-full-base images
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete old noble-full-base images
+        uses: snok/container-retention-policy@v3.0.0
+        with:
+          account: jvrck
+          token: ${{ secrets.GHCR_CLEANUP_PAT }}
+          image-names: noble-full-base
+          cut-off: 30d # Delete images older than 30 days
+          keep-n-most-recent: 5 # Always keep at least 5 recent versions
+          image-tags: "!latest" # Never delete images tagged as 'latest'
+          dry-run: false
+
+  cleanup-full:
+    name: Cleanup noble-full images
+    runs-on: ubuntu-latest
+    steps:
+      - name: Delete old noble-full images
+        uses: snok/container-retention-policy@v3.0.0
+        with:
+          account: jvrck
+          token: ${{ secrets.GHCR_CLEANUP_PAT }}
+          image-names: noble-full
+          cut-off: 30d # Delete images older than 30 days
+          keep-n-most-recent: 5 # Always keep at least 5 recent versions
+          image-tags: "!latest" # Never delete images tagged as 'latest'
+          dry-run: false
