@@ -34,5 +34,21 @@ This will open a new VS Code window with the Devcontainer running.
 
 This will also work with Github Codespaces, as the Devcontainer feature is supported.
 
+## Image Cleanup Policy
+
+This repository includes an automated GitHub Actions workflow that cleans up old container images from GitHub Container Registry to prevent storage bloat. The cleanup runs weekly and:
+
+- Deletes images older than 30 days
+- Always keeps at least 5 most recent versions
+- Never deletes images tagged as 'latest'
+- Currently runs in dry-run mode for safety
+
+To enable automatic cleanup:
+1. Create a Personal Access Token (PAT) with `delete:packages` scope
+2. Add it as a repository secret named `GHCR_CLEANUP_PAT`
+3. Edit `.github/workflows/cleanup-ghcr.yaml` and set `dry-run: false`
+
+The workflow can also be triggered manually from the Actions tab.
+
 ## License
 This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.
