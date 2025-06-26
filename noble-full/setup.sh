@@ -22,3 +22,9 @@ source /usr/local/share/nvm/nvm.sh
 npm install -g @devcontainers/cli
 # install claude-code
 npm install -g @anthropic-ai/claude-code
+# install gemini-cli
+npm install -g @google/gemini-cli
+# install repomix
+npm install -g repomix
+# CCUage
+npm install -g ccusage
