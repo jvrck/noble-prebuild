@@ -20,7 +20,7 @@ jobs:
           cut-off: 30d # Delete images older than 30 days
           keep-n-most-recent: 5 # Always keep at least 5 recent versions
           image-tags: "!latest" # Never delete images tagged as 'latest'
-          dry-run: true # TODO: Set to false after testing
+          dry-run: false
 
   cleanup-full:
     name: Cleanup noble-full images
@@ -35,4 +35,4 @@ jobs:
           cut-off: 30d # Delete images older than 30 days
           keep-n-most-recent: 5 # Always keep at least 5 recent versions
           image-tags: "!latest" # Never delete images tagged as 'latest'
-          dry-run: true # TODO: Set to false after testing
+          dry-run: false
