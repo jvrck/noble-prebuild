@@ -20,6 +20,9 @@ curl -s https://raw.githubusercontent.com/jvrck/pyinfo/master/install | sudo bas
 # Anything that requires npm or nodejs should be done here.
 source /usr/local/share/nvm/nvm.sh
 
+# Create vscode user home directory if it doesn't exist
+mkdir -p /home/vscode
+
 # Fix npm global package permissions for the vscode user (UID 1000)
 # This allows the user to upgrade global packages without permission issues
 npm config set prefix /home/vscode/.npm-global
@@ -27,6 +30,7 @@ mkdir -p /home/vscode/.npm-global
 chown -R 1000:1000 /home/vscode/.npm-global
 
 # Add npm global bin to PATH for vscode user
+touch /home/vscode/.bashrc /home/vscode/.zshrc
 echo 'export PATH=/home/vscode/.npm-global/bin:$PATH' >> /home/vscode/.bashrc
 echo 'export PATH=/home/vscode/.npm-global/bin:$PATH' >> /home/vscode/.zshrc
 
@@ -42,5 +46,8 @@ npm install -g repomix
 # CCUage
 npm install -g ccusage
 
-# Ensure vscode user owns the npm cache
+# Create and ensure vscode user owns the npm cache (if it exists)
+mkdir -p /home/vscode/.npm
 chown -R 1000:1000 /home/vscode/.npm
+# Also ensure vscode owns their home directory
+chown -R 1000:1000 /home/vscode
