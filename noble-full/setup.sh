@@ -17,6 +17,13 @@ apt install mysql-client -y
 # Install pyinfo
 curl -s https://raw.githubusercontent.com/jvrck/pyinfo/master/install | sudo bash
 
+# Install uv (Python package manager) system-wide
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# Move to system-wide location so all users can access it
+mv /root/.local/bin/uv /usr/local/bin/uv 2>/dev/null || true
+mv /root/.local/bin/uvx /usr/local/bin/uvx 2>/dev/null || true
+chmod +x /usr/local/bin/uv /usr/local/bin/uvx 2>/dev/null || true
+
 # Anything that requires npm or nodejs should be done here.
 source /usr/local/share/nvm/nvm.sh
 
@@ -45,6 +52,11 @@ npm install -g @google/gemini-cli
 npm install -g repomix
 # CCUage
 npm install -g ccusage
+# Claude Code Router
+npm install -g claude-code-router
+# install qwen-code
+npm install -g @qwen-code/qwen-code@latest
+
 
 # Create and ensure vscode user owns the npm cache (if it exists)
 mkdir -p /home/vscode/.npm
