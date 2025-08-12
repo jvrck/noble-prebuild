@@ -5,6 +5,28 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.6] - 2025-08-13
+
+### Added
+
+- Added screen and tmux terminal multiplexers for better terminal management
+- Added Goose CLI for database migrations
+- Added `--no-cache` flag to Docker build commands in Makefile for fresh builds
+
+### Changed
+
+- Optimized setup.sh script with error handling (`set -e`)
+- Combined all apt package installations into a single command for better Docker layer caching
+- Combined all npm global package installations into a single command
+- Added apt cache cleanup to reduce Docker image size
+- Removed unnecessary sudo from pyinfo installation (runs as root in Docker)
+- Fixed typos in setup.sh comments
+
+### Documentation
+
+- Updated README.md to accurately reflect all installed packages
+- Reorganized package list into categories (Base Features, Additional Tools, NPM Packages)
+
 ## [0.0.5] - 2025-08-12
 
 ### Added

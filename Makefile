@@ -4,9 +4,9 @@
 .PHONY: help
 
 build-full-base:
-	devcontainer build --image-name ghcr.io/jvrck/noble-full-base --platform "linux/amd64" --push false --workspace-folder noble-full-base
+	devcontainer build --image-name ghcr.io/jvrck/noble-full-base --platform "linux/amd64" --push false --no-cache --workspace-folder noble-full-base
 build-full:
-	docker build -t ghcr.io/jvrck/noble-full ./noble-full
+	docker build --no-cache -t ghcr.io/jvrck/noble-full ./noble-full
 pull:
 	docker login ghcr.io -u $(GH_USER) -p $(GH_TOKEN)
 	docker pull ghcr.io/jvrck/noble-full-base
