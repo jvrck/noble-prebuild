@@ -17,13 +17,12 @@ apt install mysql-client -y
 # Install pyinfo
 curl -s https://raw.githubusercontent.com/jvrck/pyinfo/master/install | sudo bash
 
-# Install uv (Python package manager)
+# Install uv (Python package manager) system-wide
 curl -LsSf https://astral.sh/uv/install.sh | sh
-# Add uv to PATH for all users
-echo 'export PATH="/root/.local/bin:$PATH"' >> /etc/bash.bashrc
-# Also add for vscode user
-echo 'export PATH="/home/vscode/.local/bin:$PATH"' >> /home/vscode/.bashrc
-echo 'export PATH="/home/vscode/.local/bin:$PATH"' >> /home/vscode/.zshrc
+# Move to system-wide location so all users can access it
+mv /root/.local/bin/uv /usr/local/bin/uv 2>/dev/null || true
+mv /root/.local/bin/uvx /usr/local/bin/uvx 2>/dev/null || true
+chmod +x /usr/local/bin/uv /usr/local/bin/uvx 2>/dev/null || true
 
 # Anything that requires npm or nodejs should be done here.
 source /usr/local/share/nvm/nvm.sh
@@ -55,6 +54,9 @@ npm install -g repomix
 npm install -g ccusage
 # Claude Code Router
 npm install -g claude-code-router
+# install qwen-code
+npm install -g @qwen-code/qwen-code@latest
+
 
 # Create and ensure vscode user owns the npm cache (if it exists)
 mkdir -p /home/vscode/.npm
