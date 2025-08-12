@@ -17,6 +17,14 @@ apt install mysql-client -y
 # Install pyinfo
 curl -s https://raw.githubusercontent.com/jvrck/pyinfo/master/install | sudo bash
 
+# Install uv (Python package manager)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# Add uv to PATH for all users
+echo 'export PATH="/root/.local/bin:$PATH"' >> /etc/bash.bashrc
+# Also add for vscode user
+echo 'export PATH="/home/vscode/.local/bin:$PATH"' >> /home/vscode/.bashrc
+echo 'export PATH="/home/vscode/.local/bin:$PATH"' >> /home/vscode/.zshrc
+
 # Anything that requires npm or nodejs should be done here.
 source /usr/local/share/nvm/nvm.sh
 
