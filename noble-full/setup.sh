@@ -45,6 +45,8 @@ npm install -g @google/gemini-cli
 npm install -g repomix
 # CCUage
 npm install -g ccusage
+# Claude Code Router
+npm install -g claude-code-router
 
 # Create and ensure vscode user owns the npm cache (if it exists)
 mkdir -p /home/vscode/.npm
