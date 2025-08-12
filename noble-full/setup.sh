@@ -1,28 +1,26 @@
 #!/bin/bash
+set -e
 
 # Run as part of the container setup
-# Install other stuff that the container rquires
+# Install other stuff that the container requires
 
-# Update and install some basic tools
-apt update && apt upgrade -y
-apt install gh -y
-apt install vim -y
-
-# Install posgresql client
-apt install postgresql-client -y
-
-# Install mysql client
-apt install mysql-client -y
-
-# Install screen and tmux
-apt install screen tmux -y
+# Update and install all apt packages in one command
+apt update && apt upgrade -y && apt install -y \
+    gh \
+    vim \
+    postgresql-client \
+    mysql-client \
+    screen \
+    tmux \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
 # Install Goose CLI
 curl -fsSL https://github.com/pressly/goose/releases/latest/download/goose_linux_x86_64 -o /usr/local/bin/goose
 chmod +x /usr/local/bin/goose
 
 # Install pyinfo
-curl -s https://raw.githubusercontent.com/jvrck/pyinfo/master/install | sudo bash
+curl -s https://raw.githubusercontent.com/jvrck/pyinfo/master/install | bash
 
 # Install uv (Python package manager) system-wide
 curl -LsSf https://astral.sh/uv/install.sh | sh
@@ -50,20 +48,14 @@ echo 'export PATH=/home/vscode/.npm-global/bin:$PATH' >> /home/vscode/.zshrc
 
 # Install global npm packages
 export PATH=/home/vscode/.npm-global/bin:$PATH
-npm install -g @devcontainers/cli
-# install claude-code
-npm install -g @anthropic-ai/claude-code
-# install gemini-cli
-npm install -g @google/gemini-cli
-# install repomix
-npm install -g repomix
-# CCUage
-npm install -g ccusage
-# Claude Code Router
-npm install -g claude-code-router
-# install qwen-code
-npm install -g @qwen-code/qwen-code@latest
-
+npm install -g \
+    @devcontainers/cli \
+    @anthropic-ai/claude-code \
+    @google/gemini-cli \
+    repomix \
+    ccusage \
+    claude-code-router \
+    @qwen-code/qwen-code@latest
 
 # Create and ensure vscode user owns the npm cache (if it exists)
 mkdir -p /home/vscode/.npm
