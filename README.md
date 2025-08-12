@@ -5,19 +5,32 @@ This repository is a prebuilt [Devcontainer](https://containers.dev/) that uses 
 ## jvrck/noble-full image
 This is a prebuilt image that is based on the latest devcontainers Ubuntu 24.04 noble base and contains the following software:
 
-- Docker in Docker (via Devcontainer feature) 
-- Python 3.12 (via Devcontainer feature)
-- Node.js 20 (via Devcontainer feature)
-- AWS CLI v2 (via Devcontainer feature)
-- mise (polyglot runtime manager) (via Devcontainer feature)
-- Github CLI
-- MySQL Client
+### Base Image Features (via Devcontainer)
+- Docker in Docker
+- Python 3.12
+- Node.js 20
+- AWS CLI v2
+- mise (polyglot runtime manager)
+
+### Additional Tools
+- GitHub CLI (gh)
+- Vim editor
 - PostgreSQL Client
+- MySQL Client
+- Screen
+- Tmux
+- Goose CLI (database migration tool)
+- Pyinfo
+- UV (Python package manager)
+
+### NPM Global Packages
 - Devcontainer CLI
 - Claude Code CLI
 - Gemini CLI
-- RepoMix
+- Repomix
 - CCUsage
+- Claude Code Router
+- Qwen Code CLI
 
 ## How to use this image
 To use this image, you can create a `.devcontainer/devcontainer.json` file in your project and add the following configuration:
