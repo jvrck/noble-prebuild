@@ -14,6 +14,13 @@ apt install postgresql-client -y
 # Install mysql client
 apt install mysql-client -y
 
+# Install screen and tmux
+apt install screen tmux -y
+
+# Install Goose CLI
+curl -fsSL https://github.com/pressly/goose/releases/latest/download/goose_linux_x86_64 -o /usr/local/bin/goose
+chmod +x /usr/local/bin/goose
+
 # Install pyinfo
 curl -s https://raw.githubusercontent.com/jvrck/pyinfo/master/install | sudo bash
 
