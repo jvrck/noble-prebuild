@@ -44,6 +44,7 @@ The project uses a two-stage approach:
    - pyinfo tool
    - Devcontainer CLI
    - Claude Code CLI
+   - Codex CLI (OpenAI)
 
 ## CI/CD Workflows
 

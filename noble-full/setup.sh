@@ -52,6 +52,7 @@ npm install -g \
     @devcontainers/cli \
     @anthropic-ai/claude-code \
     @google/gemini-cli \
+    @openai/codex \
     repomix \
     ccusage \
     claude-code-router \

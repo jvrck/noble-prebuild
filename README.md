@@ -27,6 +27,7 @@ This is a prebuilt image that is based on the latest devcontainers Ubuntu 24.04 
 - Devcontainer CLI
 - Claude Code CLI
 - Gemini CLI
+- Codex CLI (OpenAI)
 - Repomix
 - CCUsage
 - Claude Code Router
