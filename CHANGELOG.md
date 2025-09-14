@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [0.0.7] - 2025-09-15
+
+### Added
+
+- Added Codex CLI (OpenAI) to the list of AI CLI tools
+- Added update-ai-tools script for updating all AI CLI tools with a single command
+  - Updates claude-code, gemini-cli, qwen-code, and codex-cli
+  - Provides progress indicators and error handling
+  - Installed system-wide at /usr/local/bin/update-ai-tools
+
 ## [0.0.6] - 2025-08-13
 
 ### Added
