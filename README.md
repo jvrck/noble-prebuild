@@ -22,6 +22,7 @@ This is a prebuilt image that is based on the latest devcontainers Ubuntu 24.04 
 - Goose CLI (database migration tool)
 - Pyinfo
 - UV (Python package manager)
+- update-ai-tools (Updates all AI CLI tools with one command)
 
 ### NPM Global Packages
 - Devcontainer CLI
@@ -67,6 +68,19 @@ This command:
 - Mounts the Docker socket for Docker-in-Docker functionality
 - Mounts your current directory to `/workspace`
 - Sets the working directory to `/workspace`
+
+### Updating AI CLI Tools
+The image includes a convenient script to update all AI CLI tools at once:
+
+```bash
+update-ai-tools
+```
+
+This will update:
+- Claude Code CLI
+- Gemini CLI
+- Qwen Code CLI
+- Codex CLI
 
 ## Image Cleanup Policy
 

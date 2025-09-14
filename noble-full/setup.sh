@@ -22,6 +22,10 @@ chmod +x /usr/local/bin/goose
 # Install pyinfo
 curl -s https://raw.githubusercontent.com/jvrck/pyinfo/master/install | bash
 
+# Install update-ai-tools script
+cp /app/update-ai-tools /usr/local/bin/update-ai-tools
+chmod +x /usr/local/bin/update-ai-tools
+
 # Install uv (Python package manager) system-wide
 curl -LsSf https://astral.sh/uv/install.sh | sh
 # Move to system-wide location so all users can access it
