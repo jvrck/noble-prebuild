@@ -1,4 +1,6 @@
 name: Build and Push Noble Full
+env:
+  DOCKER_BUILD_RECORD_UPLOAD: "false"
 
 on:
   push:
